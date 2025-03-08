@@ -1,3 +1,4 @@
+<%= render 'login_status' %>
 <ul>
     <% @posts.each do |post| %>
         <li>
@@ -8,3 +9,9 @@
         </li>
     <% end %>
 </ul>
+<%= link_to 'Create post', new_post_path %>
+<% if user_signed_in? %>
+    <%= button_to 'Sign out', destroy_user_session_path, method: :delete %>
+<% else %>
+    <%= link_to 'Login/Sign up', user_session_path %>
+<% end %>

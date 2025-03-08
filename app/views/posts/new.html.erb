@@ -1,3 +1,15 @@
+<%= render 'login_status' %>
+<% if !@post.errors.empty? %>
+    <h4>Errors!</h4>
+    <div>Please fix the mistake(s): </div>
+    <ul>
+        <% @post.errors.full_messages.each do |message| %>
+            <li>
+                <%= message %>
+            </li>
+        <% end %>
+    </ul>
+<% end %>
 <h2>New Post</h2>
 <%= form_with model: @post do |form| %>
     <div>
@@ -12,4 +24,8 @@
     <div>
         <%= form.text_area :body %>
     </div>
+    <div>
+        <%= form.submit %>
+    </div>
 <% end %>
+<%= link_to 'Home', posts_path %>
