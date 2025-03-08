@@ -1,0 +1,15 @@
+<h2>New Post</h2>
+<%= form_with model: @post do |form| %>
+    <div>
+        <%= form.label :title %>
+    </div>
+    <div>
+        <%= form.text_field :title, placeholder: 'An Awesome Title!' %>
+    </div>
+    <div>
+        <%= form.label :body %>
+    </div>
+    <div>
+        <%= form.text_area :body %>
+    </div>
+<% end %>
