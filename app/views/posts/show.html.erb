@@ -1,0 +1,9 @@
+<%= render 'login_status' %>
+<h1><%= @post.title %></h1>
+<div>
+    <% if user_signed_in? %>
+        <div> by <%= @post.user.username %></div><br>
+    <% end %>
+</div>
+<p><%= @post.body %></p>
+<%= link_to 'Back', posts_path %>
